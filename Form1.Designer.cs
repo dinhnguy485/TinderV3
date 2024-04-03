@@ -1,6 +1,6 @@
 ﻿namespace Tinder
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tinderLogo = new System.Windows.Forms.PictureBox();
             this.getStartedButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
@@ -240,7 +240,7 @@
             this.option3.UseVisualStyleBackColor = true;
             this.option3.Click += new System.EventHandler(this.option3_Click);
             // 
-            // tinderApp
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +267,7 @@
             this.Controls.Add(this.getStartedButton);
             this.Controls.Add(this.tinderLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "tinderApp";
+            this.Name = "MainForm";
             this.Text = "Tinder";
             ((System.ComponentModel.ISupportInitialize)(this.tinderLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelPicture)).EndInit();

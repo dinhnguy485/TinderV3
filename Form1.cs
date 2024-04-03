@@ -16,7 +16,7 @@ using System.Media;
 
 namespace Tinder
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         //Set page to 1.
         //set the 2 gender button status in the login page to false.
@@ -30,7 +30,7 @@ namespace Tinder
        
 
         // At the starting page, hide all the controls
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             HideAllControls();

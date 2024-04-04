@@ -76,7 +76,6 @@ namespace Tinder
             maleButtonWasClicked = true;
         }
 
-
         //a control to show all the controls in the login page
         private void ShowAllControls()
         {

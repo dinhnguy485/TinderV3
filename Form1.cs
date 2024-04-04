@@ -27,38 +27,6 @@ namespace Tinder
         Random randGen = new Random();
 
         //A fundtion to hide all the buttons and labels. 
-       
-
-        // At the starting page, hide all the controls
-        public MainForm()
-        {
-            InitializeComponent();
-            HideAllControls();
-        }
-
-        //function that waits 1 seconds and add a notification sound effect.
-        private void sleep()
-        {
-            SoundPlayer noti = new SoundPlayer(Properties.Resources.Notification);
-            noti.Play();
-            this.Refresh();
-            Thread.Sleep(1000);
-        }
-        //function that waits 1 seconds and sound effect for the notification.
-        
-        private void femaleButton_Click(object sender, EventArgs e)
-        {
-            femaleButtonWasPressed = true;
-        }
-        //a boolean that when its clicked, we navigate to the men
-
-
-        private void maleButton_Click(object sender, EventArgs e)
-        {
-            maleButtonWasClicked = true;
-        }
-        //a boolean that when its clicked, we navigate to women
-        
         private void HideAllControls()
         {
             nameLabel.Visible = false;
@@ -79,8 +47,37 @@ namespace Tinder
             option3Label.Visible = false;
             option3.Visible = false;
         }
-        //a control to hide all button when started
 
+        // At the starting page, hide all the controls
+        public MainForm()
+        {
+            InitializeComponent();
+            HideAllControls();
+        }
+
+        //function that waits 1 seconds and add a notification sound effect.
+        private void sleep()
+        {
+            SoundPlayer noti = new SoundPlayer(Properties.Resources.notificationSound);
+            noti.Play();
+            this.Refresh();
+            Thread.Sleep(1000);
+        }
+
+        //a boolean that when its true, the page will show male models.
+        private void femaleButton_Click(object sender, EventArgs e)
+        {
+            femaleButtonWasPressed = true;
+        }
+
+        //a boolean that when its true, we navigate to men
+        private void maleButton_Click(object sender, EventArgs e)
+        {
+            maleButtonWasClicked = true;
+        }
+
+
+        //a control to show all the controls in the login page
         private void ShowAllControls()
         {
             nameLabel.Visible = true;
@@ -93,7 +90,6 @@ namespace Tinder
             maleButton.Visible = true;
             femaleButton.Visible = true;
         }
-        //a control to show all the controls in the login page
 
         //when the start button in the login page is clicked, either navigate to male, or female depends on the gender.
         private void getStartedButton_Click(object sender, EventArgs e)
@@ -133,8 +129,8 @@ namespace Tinder
             }
             pagesSetting();
         }
-        //when start button is clicked, navigate to both male or female depends on what gender they picked
-        
+
+        //a button setting when the page is in "model page", where it's only show a picture of a person.        
         private void buttonModelSetting()
         {
             mainLabel.BackColor = Color.Transparent;
@@ -145,7 +141,6 @@ namespace Tinder
             option1.Text = "Right";
             option2.Text = "Left";
         }
-        //change the button location and text to right and left
 
         //a function to set the button properties when it is in the chatting page.
         private void buttonChatSetting()
@@ -161,16 +156,16 @@ namespace Tinder
             option1.Text = "A";
             option2.Text = "B";
         }
-        //change the button to the chat setting
-        
+
+        //a function to show the in the welcome page
         private void page1()
         {
             tinderLogo.Visible = true;
             getStartedButton.Visible = true;
             descriptionLabel.Visible = true;
         }
-        //to show the login page
-        
+
+        //a function to shows the chat.
         private void pagesSetting()
         {
             switch (page)
@@ -219,7 +214,7 @@ namespace Tinder
                     sleep();
                     mainLabel.Text += "\n\nHim: I don't really have a hobby";
                     sleep();
-                    mainLabel.Text += "\n\nYou: Oh,OKay. Well it was nice chatting";
+                    mainLabel.Text += "\n\nYou: Oh, okay. Well it was nice chatting";
                     sleep();
                     mainLabel.Text += "\n\nHim: Yes, you too!";
                     sleep();
@@ -311,9 +306,9 @@ namespace Tinder
                     sleep();
                     mainLabel.Text += "\n\nYou: Me neither. How about we change that. Are you free this weekend?";
                     sleep();
-                    mainLabel.Text += "\n\nHim: Sounds great! Im in";
+                    mainLabel.Text += "\n\nHim: Sounds great! Im in.";
                     sleep();
-                    mainLabel.Text += "\n\nYou: Cool! I'll plan and send you the details! Can't wait";
+                    mainLabel.Text += "\n\nYou: Cool! I'll plan and send you the details! Can't wait.";
                     sleep();
                     option1Label.Text = "View Results";
                     option2Label.Text = "Play Again";
@@ -604,9 +599,8 @@ namespace Tinder
                     break;
             }
         }
-        //page setting
 
-        //A option 1 page navigator.
+        //An option 1 page navigator.
         private void option1_Click(object sender, EventArgs e)
         {
             if (page == 3)
@@ -652,6 +646,7 @@ namespace Tinder
             }
             else if (page == 13)
             {
+                // a random function to random 2 endings 
                 int randValue = randGen.Next(1, 101);
 
                 if (randValue < 30)
@@ -741,9 +736,8 @@ namespace Tinder
             }
             pagesSetting();
         }
-        //option 1 navigator
 
-        //a option 2 page navigator.
+        //an option 2 page navigator.
         private void option2_Click(object sender, EventArgs e)
         {
             if (page == 3)
@@ -787,7 +781,6 @@ namespace Tinder
             {
                 page = 14;
             }
-            // a random function to have 
             else if (page == 13)
             {
                 page = 1;
@@ -870,7 +863,6 @@ namespace Tinder
             }
             pagesSetting();
         }
-       // option2 navigator
 
         //option 3 page navigator.
         private void option3_Click(object sender, EventArgs e)
@@ -881,7 +873,6 @@ namespace Tinder
             }
             pagesSetting();
         }
-        // navigator.
     }
 }
 
